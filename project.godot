@@ -1,0 +1,31 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Click Me Godot"
+run/main_scene="res://Game/Game.tscn"
+config/features=PackedStringArray("4.4")
+config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Global/Global.gd"
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation=1
+quality/intended_usage/framebuffer_allocation.mobile=1
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+quality/directional_shadow/size=256
+quality/directional_shadow/size.mobile=256
+environment/default_environment="res://default_env.tres"

@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwyojeqgjid3f"]
+
+[ext_resource type="Script" uid="uid://bv2bu0mhfgmbf" path="res://UI/ClickUpgradeButton/ClickUpgrade.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://yor7c2ip20a8" path="res://UI/blue_button.png" id="2_f4i4m"]
+[ext_resource type="Script" uid="uid://cfs3iy78sh7h2" path="res://UI/button_effects.gd" id="3_gx3qf"]
+
+[node name="ClickUpgrade" type="TextureButton"]
+custom_minimum_size = Vector2(261.105, 50)
+offset_right = 210.0
+offset_bottom = 70.0
+pivot_offset = Vector2(105, 33)
+script = ExtResource("2")
+
+[node name="Background" type="NinePatchRect" parent="."]
+self_modulate = Color(1, 0.93, 0.85, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_f4i4m")
+region_rect = Rect2(0, 0, 190, 49.8635)
+patch_margin_left = 16
+patch_margin_top = 7
+patch_margin_right = 11
+patch_margin_bottom = 29
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Upgrade Click Cost: 10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonEffects" type="Node" parent="."]
+script = ExtResource("3_gx3qf")

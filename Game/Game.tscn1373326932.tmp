@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://beldbwfaq2dhi"]
+
+[ext_resource type="Script" uid="uid://bdbrdjrfvppii" path="res://Game/Points.gd" id="2_3k6gv"]
+[ext_resource type="Script" uid="uid://rpq34g13w5xv" path="res://Game/PointsPerSecond.gd" id="3_1q8bt"]
+[ext_resource type="PackedScene" uid="uid://bwdsmhwljq0pm" path="res://UI/ClickerButton/Clicker.tscn" id="4_gvja8"]
+[ext_resource type="Script" uid="uid://bj2l48u84v5bv" path="res://Game/AutoClickColumn.gd" id="5_jxerj"]
+[ext_resource type="PackedScene" uid="uid://dwyojeqgjid3f" path="res://UI/ClickUpgradeButton/ClickUpgrade.tscn" id="5_m1o7v"]
+
+[node name="Game" type="Node"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00403912, 0.065311, 0.124744, 1)
+
+[node name="Points" type="RichTextLabel" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -397.0
+offset_top = 13.0
+offset_right = -15.0
+offset_bottom = 60.0
+grow_horizontal = 0
+size_flags_vertical = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "Points: 0"
+horizontal_alignment = 2
+script = ExtResource("2_3k6gv")
+
+[node name="PointsPerSecond" type="RichTextLabel" parent="UI"]
+visible = false
+layout_mode = 0
+size_flags_vertical = 2
+bbcode_enabled = true
+text = "Pts/S: 0"
+script = ExtResource("3_1q8bt")
+
+[node name="Clicker" parent="UI" instance=ExtResource("4_gvja8")]
+layout_mode = 2
+offset_left = 469.0
+offset_top = 283.0
+offset_right = 719.0
+offset_bottom = 353.0
+
+[node name="ClickUpgrade" parent="UI" instance=ExtResource("5_m1o7v")]
+layout_mode = 2
+offset_left = 13.0
+offset_top = 14.0
+offset_right = 263.0
+offset_bottom = 64.0
+
+[node name="AutoClickColumn" type="VBoxContainer" parent="UI"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+offset_left = 17.03
+offset_top = 77.0
+offset_right = 67.03
+offset_bottom = 127.0
+theme_override_constants/separation = 10
+script = ExtResource("5_jxerj")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
